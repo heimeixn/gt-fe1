@@ -1,0 +1,21 @@
+<!doctype html ng-app="gt_fe">
+<html>
+    <head>
+       <script src="lib/angular/angular.js"></script>
+       <script>
+       	var app = angular.module('gt_fe2', []);
+
+app.config(['$interpolateProvider', function($interpolateProvider) {
+  $interpolateProvider.startSymbol('{[');
+  $interpolateProvider.endSymbol(']}');
+  
+}]);
+//console.log($compile);
+       </script>
+    </head>
+    <body ng-app="gt_fe2">
+        Your name: <input type="text" ng-model="yourname" placeholder="World">
+        <hr>
+        Hello {[yourname || 'World']}!
+    </body>
+</html>
